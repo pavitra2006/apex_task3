@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <h1>Travel Explorer</h1>
+            <nav id="mainNav">
+                <button id="navToggle" aria-label="Toggle navigation">☰</button>
+                <ul>
+                    <li><a href="#carousel">Destinations</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="quiz-answer-all.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="carousel" class="carousel-section">
+            <div class="carousel">
+                <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+                <div class="carousel-images">
+                    <!-- Images injected by JS -->
+                </div>
+                <button class="carousel-btn next" aria-label="Next">&#10095;</button>
+            </div>
+            <div class="carousel-thumbnails">
+                <!-- Thumbnails injected by JS -->
+            </div>
+        </section>
+        <!-- Interactive Quiz Section removed -->
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Travel Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

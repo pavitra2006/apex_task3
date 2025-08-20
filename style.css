@@ -1,0 +1,244 @@
+/* Travel Explorer Styles */
+:root {
+    --primary: #2d6cdf;
+    --secondary: #f7b731;
+    --bg: #f4f8fb;
+    --text: #222;
+    --nav-bg: #fff;
+    --footer-bg: #222;
+    --footer-text: #fff;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+header {
+    background: var(--nav-bg);
+    box-shadow: 0 2px 8px rgba(45,108,223,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+header h1 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: var(--secondary);
+}
+#navToggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+main {
+    padding: 2rem 0 1rem 0;
+}
+.carousel-section {
+    margin-bottom: 2.5rem;
+}
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.carousel-images {
+    width: 420px;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(45,108,223,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+.carousel-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s;
+}
+.carousel-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 0 1rem;
+    transition: background 0.2s;
+    opacity: 0.85;
+}
+.carousel-btn:hover {
+    background: var(--secondary);
+    color: #222;
+}
+.carousel-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+.carousel-thumbnails img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.7;
+    border: 2px solid transparent;
+    transition: border 0.2s, opacity 0.2s;
+}
+.carousel-thumbnails img.active {
+    border: 2px solid var(--primary);
+    opacity: 1;
+}
+.weather-section {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(45,108,223,0.06);
+    padding: 2rem 1.5rem;
+    max-width: 500px;
+    margin: 0 auto 2.5rem auto;
+}
+.weather-section h2 {
+    margin-top: 0;
+    color: var(--primary);
+}
+#weatherForm {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+}
+#weatherForm select, #weatherForm button {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+#weatherForm button {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#weatherForm button:hover {
+    background: var(--secondary);
+    color: #222;
+}
+#weatherResult {
+    min-height: 60px;
+    font-size: 1.1rem;
+    color: #333;
+}
+.about-section {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(45,108,223,0.06);
+    padding: 2rem 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+}
+footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1.2rem 0 0.7rem 0;
+    margin-top: 2rem;
+}
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+/* Tablet */
+@media (max-width: 900px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .carousel-images {
+        width: 320px;
+        height: 200px;
+    }
+    .about-section, .weather-section {
+        padding: 1.2rem 0.7rem;
+    }
+}
+/* Mobile */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        min-width: 140px;
+        box-shadow: 0 2px 8px rgba(45,108,223,0.10);
+        border-radius: 8px;
+        padding: 0.7rem 0.5rem;
+        display: none;
+    }
+    nav ul.open {
+        display: flex;
+    }
+    #navToggle {
+        display: block;
+    }
+    .carousel-images {
+        width: 95vw;
+        height: 38vw;
+        min-height: 120px;
+        max-width: 98vw;
+    }
+    .about-section, .weather-section {
+        padding: 1rem 0.3rem;
+    }
+}

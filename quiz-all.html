@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Travel Quiz Questions</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-list-container { max-width: 700px; margin: 2rem auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(45,108,223,0.06); padding: 2rem 1.5rem; }
+        .quiz-list-container h2 { color: var(--primary); }
+        .quiz-q { margin-bottom: 1.5rem; }
+        .quiz-q strong { color: var(--secondary); }
+        .quiz-q ul { list-style: none; padding: 0; }
+        .quiz-q li { margin-bottom: 0.4rem; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; background: var(--primary); color: #fff; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 500; }
+        .back-link:hover { background: var(--secondary); color: #222; }
+    </style>
+</head>
+<body>
+    <div class="quiz-list-container">
+        <a href="index.html" class="back-link">&larr; Back to Main Site</a>
+        <h2>All Travel Quiz Questions</h2>
+        <div id="allQuizQuestions"></div>
+    </div>
+    <script>
+    // Same quiz questions as in script.js
+    const quizQuestions = [
+        {
+            question: "Which city is known as the 'City of Light'?",
+            options: ["London", "Paris", "Tokyo", "Sydney"],
+            answer: 1
+        },
+        {
+            question: "Which city is famous for the Opera House by the harbor?",
+            options: ["New York", "London", "Sydney", "Paris"],
+            answer: 2
+        },
+        {
+            question: "Mount Fuji is a landmark near which city?",
+            options: ["Tokyo", "Paris", "London", "Sydney"],
+            answer: 0
+        },
+        {
+            question: "Which city is home to the Eiffel Tower?",
+            options: ["Paris", "London", "New York", "Tokyo"],
+            answer: 0
+        }
+        ,
+        {
+            question: "Which city is known for the Colosseum?",
+            options: ["Rome", "Berlin", "Cairo", "Dubai"],
+            answer: 0
+        },
+        {
+            question: "Which city is famous for the Burj Khalifa, the world's tallest building?",
+            options: ["Singapore", "Dubai", "Sydney", "Toronto"],
+            answer: 1
+        },
+        {
+            question: "Which city is located at the foot of Table Mountain?",
+            options: ["Cape Town", "Rio de Janeiro", "Berlin", "Paris"],
+            answer: 0
+        },
+        {
+            question: "Which city is known for the Christ the Redeemer statue?",
+            options: ["Rio de Janeiro", "Cairo", "London", "Tokyo"],
+            answer: 0
+        },
+        {
+            question: "Which city is famous for the Brandenburg Gate?",
+            options: ["Berlin", "Rome", "Paris", "Sydney"],
+            answer: 0
+        },
+        {
+            question: "Which city is home to the Pyramids of Giza?",
+            options: ["Cairo", "Rome", "Tokyo", "New York"],
+            answer: 0
+        }
+    ];
+    const allQuizDiv = document.getElementById('allQuizQuestions');
+    quizQuestions.forEach((q, idx) => {
+        const div = document.createElement('div');
+        div.className = 'quiz-q';
+        div.innerHTML = `<strong>Q${idx+1}:</strong> ${q.question}<ul>${q.options.map((opt, i) => `<li${i===q.answer?' style=\"color:green;font-weight:bold;\"':''}>${String.fromCharCode(65+i)}. ${opt}${i===q.answer?' (Correct Answer)':''}</li>`).join('')}</ul>`;
+        allQuizDiv.appendChild(div);
+    });
+    </script>
+</body>
+</html>
